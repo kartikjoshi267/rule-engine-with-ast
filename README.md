@@ -53,7 +53,7 @@ FRONTEND_URL=http://localhost:5173
 docker-compose up
 ```
 
-4. Open the [http://localhost:5173](`http://localhost:5173`) in the browser.
+4. Open the [http://localhost:5173](http://localhost:5173) in the browser.
 
 ### 2. Local Without Docker (make sure mongo server is running on the MONGODB_URI specified in the .env file in the first step)
 
@@ -86,4 +86,4 @@ npm install
 npm run dev
 ```
 
-5. Open the [http://localhost:5173](`http://localhost:5173`) in the browser.
+5. Open the [http://localhost:5173](http://localhost:5173) in the browser.
