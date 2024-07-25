@@ -6,7 +6,7 @@ const createRule = async (ruleString: string, name: string) => {
   const ast = AstHelper.constructAst(ruleString);
   const existingRule = await Rule.findOne({ name });
   if (existingRule) {
-    throw new BadRequestError("Rule already exists");
+    throw new BadRequestError("Rule with same name already exists");
   }
   const rule = new Rule({ ruleString, ast, name });
   await rule.save();

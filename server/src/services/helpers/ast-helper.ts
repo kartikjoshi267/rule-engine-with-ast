@@ -167,27 +167,6 @@ export default class AstHelper {
   };
 
   public static combineRules = (ruleStrings: string[]) => {
-    // const operatorFrequency: { [key: string]: number } = {};
-    // const ruleAsts = ruleStrings.map(rule => {
-    //   const tokens = AstHelper.tokenize(rule);
-    //   tokens.forEach(token => {
-    //     if (AstHelper.OPERATORS.includes(token)) {
-    //       operatorFrequency[token] = (operatorFrequency[token] || 0) + 1;
-    //     }
-    //   });
-    //   return { rule, ast: AstHelper.constructAst(rule) };
-    // });
-  
-    // const sortedOperators = Object.keys(operatorFrequency).sort((a, b) => operatorFrequency[b] - operatorFrequency[a]);
-  
-    // if (ruleAsts.length === 0) return null;
-    // if (ruleAsts.length === 1) return ruleAsts[0].ast;
-  
-    // let combinedAST = ruleAsts[0].ast;
-    // for (let i = 1; i < ruleAsts.length; i++) {
-    //   combinedAST = AstHelper.createNode('operator', combinedAST, ruleAsts[i].ast, sortedOperators[0]);
-    // }
-
     let ruleString = "(";
     for (let i = 0; i < ruleStrings.length; i++) {
       ruleString += ruleStrings[i];
