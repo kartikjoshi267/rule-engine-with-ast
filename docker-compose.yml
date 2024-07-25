@@ -1,0 +1,54 @@
+name: rule-engine-with-ast
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: rule-engine-server
+    container_name: rule-engine-node-server
+    volumes:
+      - ./server/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    env_file: ./server/.env
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-network
+  mongo:
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    image: rule-engine-client
+    container_name: rule-engine-react-client
+    command: npm run dev
+    volumes:
+      - ./client/:/usr/app/client
+      - /usr/app/client/node_modules
+    depends_on:
+      - server
+    ports:
+      - "5173:5173"
+    networks:
+      - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    data-volume:
+    node_modules:
+    web-root:
+      driver: local
