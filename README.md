@@ -1,6 +1,6 @@
 # Rule Engine with AST
 
-## Github Link [https://github.com/kartikjoshi/Rule-Engine-with-AST](https://github.com/kartikjoshi/Rule-Engine-with-AST)
+## Github Link [https://github.com/kartikjoshi267/Rule-Engine-with-AST](https://github.com/kartikjoshi267/Rule-Engine-with-AST)
 
 ## Description
 
